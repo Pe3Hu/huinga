@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Battlefield" type="Node2D"]
+
+[node name="Dummys" type="Node" parent="."]
+
+[node name="Lords" type="Node" parent="."]
