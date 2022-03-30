@@ -14,6 +14,8 @@ func init_lords():
 		var lord = Classes.Lord.new(input)
 		Global.array.lord.append(lord)
 		Global.list.primary_key.lord += 1
+	
+	
 
 func init_encounters():
 	var encounter_count = 1

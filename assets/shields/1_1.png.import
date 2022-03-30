@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/3_2.png-0e2fe5a3e5f2cad30c43a38f2d69179f.stex"
+path="res://.import/1_1.png-cca04693144578b6261b967ac8c0715f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shileds/3_2.png"
-dest_files=[ "res://.import/3_2.png-0e2fe5a3e5f2cad30c43a38f2d69179f.stex" ]
+source_file="res://assets/shields/1_1.png"
+dest_files=[ "res://.import/1_1.png-cca04693144578b6261b967ac8c0715f.stex" ]
 
 [params]
 

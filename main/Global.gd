@@ -19,12 +19,19 @@ func init_primary_key():
 	list.primary_key.dummy = 0
 	list.primary_key.encounter = 0
 
+func init_stats():
+	list.stat = {}
+	list.stat.all = ["Health","Healt Recovery","Stamina","Stamina Recovery","Mana","Mana Recovery","Critical Scale","Critical Chance",
+					"Attack","Attack Speed","Accuracy","Dodge","Defense",
+					"Spell","Spell Cast","Multicast","Immune","Resistant",]
+	
 func init_races():
 	list.race = ["Angel","Demon"]
 
 func init_list():
 	init_window_size()
 	init_primary_key()
+	init_stats()
 	init_races()
 
 func init_array():
@@ -45,9 +52,7 @@ func _ready():
 	init_flag()
 
 func add_child_node(parent_node_path_,child_node_):
-	var p = get_node(parent_node_path_)
-	var parent_node = get_node(parent_node_path_).add_child(child_node_)
-	
-	
 	#set position if needed
 	#child_node_.global_transform = global_transform
+	var p = get_node(parent_node_path_)
+	var parent_node = get_node(parent_node_path_).add_child(child_node_)
