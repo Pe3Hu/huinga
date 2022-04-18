@@ -5,7 +5,10 @@ var rng = RandomNumberGenerator.new()
 var list = {}
 var array = {}
 var scene = {}
+var node = {}
+var ui = {}
 var flag = {}
+var data = {}
 
 func init_window_size():
 	list.window_size = {}
@@ -24,7 +27,7 @@ func init_stats():
 	list.stat.all = ["Health","Healt Recovery","Stamina","Stamina Recovery","Mana","Mana Recovery","Critical Scale","Critical Chance",
 					"Attack","Attack Speed","Accuracy","Dodge","Defense",
 					"Spell","Spell Cast","Multicast","Immune","Resistant",]
-	
+
 func init_races():
 	list.race = ["Angel","Demon"]
 
@@ -41,7 +44,17 @@ func init_array():
 
 func init_scene():
 	scene.dummy = preload("res://battle/Dummy.tscn")
-	
+
+func init_node():
+	node.Dummys = get_node("/root/Game/Battlefield/Dummys")
+	node.TimeBar = get_node("/root/Game/UI/TimeBar") 
+	ui.bar = []
+
+func init_data():
+	data.size = {}
+	data.size.shield = Vector2(91,97)
+	data.size.bar = Vector2(91,30)
+
 func init_flag():
 	flag.ready = false
 
@@ -49,6 +62,8 @@ func _ready():
 	init_list()
 	init_array()
 	init_scene()
+	init_node()
+	init_data()
 	init_flag()
 
 func add_child_node(parent_node_path_,child_node_):

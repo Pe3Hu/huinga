@@ -87,8 +87,15 @@ class Encounter:
 			var dummy_instance =  Global.scene.dummy.instance()
 			dummy_instance.name = "Core" + String(_i)
 			dummy_instance.position = shift
-			dummy_instance.get_children()[0].set_texture(load("res://assets/"+img_name+".png"))
+			var sprite = dummy_instance.get_node("Sprite")
+			sprite.set_texture(load("res://assets/"+img_name+".png"))
 			Global.add_child_node("/root/Game/Battlefield/Dummys",dummy_instance)
+			
+			var bars = dummy_instance.get_node("Bars")
+			var vec = -Global.data.size.shield / 2
+			vec.y -= bars.get_children().size() * Global.data.size.bar.y
+			bars.rect_position = vec
+			bars.rect_size = Global.data.size.bar
 			
 			img_name = "shields/1_0"
 			length = Global.list.window_size.height * 2 / 5
@@ -98,5 +105,52 @@ class Encounter:
 			dummy_instance = Global.scene.dummy.instance()
 			dummy_instance.name = "Avatar" + String(_i)
 			dummy_instance.position = shift
-			dummy_instance.get_children()[0].set_texture(load("res://assets/"+img_name+".png"))
+			sprite = dummy_instance.get_node("Sprite")
+			sprite.set_texture(load("res://assets/"+img_name+".png"))
 			Global.add_child_node("/root/Game/Battlefield/Dummys",dummy_instance)
+			
+			bars = dummy_instance.get_node("Bars")
+			vec = -Global.data.size.shield / 2
+			vec.y -= bars.get_children().size() * Global.data.size.bar.y
+			bars.rect_position = vec
+			#Global.ui.bar.append()
+
+class Carcass:
+	var number = {}
+	var string = {}
+	var array = {}
+	var list = {}
+	var flag = {}
+	
+	func _init(input_):
+		list.owner = input_.owner
+
+class Core:
+	var number = {}
+	var string = {}
+	var array = {}
+	var list = {}
+	var flag = {}
+	
+	func _init(input_):
+		list.owner = input_.owner
+
+class Technique:
+	var number = {}
+	var string = {}
+	var array = {}
+	var list = {}
+	var flag = {}
+	
+	func _init(input_):
+		list.owner = input_.owner
+
+class Golem:
+	var number = {}
+	var string = {}
+	var array = {}
+	var list = {}
+	var flag = {}
+	
+	func _init(input_):
+		list.owner = input_.owner

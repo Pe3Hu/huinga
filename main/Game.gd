@@ -14,8 +14,6 @@ func init_lords():
 		var lord = Classes.Lord.new(input)
 		Global.array.lord.append(lord)
 		Global.list.primary_key.lord += 1
-	
-	
 
 func init_encounters():
 	var encounter_count = 1
@@ -31,7 +29,12 @@ func init_encounters():
 	Global.array.encounter[0].add_lord(Global.array.lord[0])
 	Global.array.encounter[0].add_lord(Global.array.lord[1])
 	Global.array.encounter[0].calc_anchors()
-	
 
 func _process(delta):
 	pass
+
+func _on_Timer_timeout():
+	#print(Global.node.Dummys.get_children()) 
+	Global.node.TimeBar.value += 1
+	if Global.node.TimeBar.value >= Global.node.TimeBar.max_value:
+		Global.node.TimeBar.value -= Global.node.TimeBar.max_value
